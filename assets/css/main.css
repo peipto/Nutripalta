@@ -8710,17 +8710,11 @@ section {
   transform: scale(1.03);
 }
 
-/* Ocultar hamburguesa en PC */
-.hamburger {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
-}
-
 /* Ajustes en pantallas pequeñas */
 @media (max-width: 768px) {
   .nav-links {
-    display: none;
+    display: none;  /* Oculto por defecto */
+    flex-direction: column;
     position: absolute;
     top: 60px;
     right: 0;
@@ -8728,11 +8722,14 @@ section {
     width: 200px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+
+  .nav-links.active {
+    display: flex;  /* Mostrar al activar */
     animation: slideDown 0.3s ease forwards;
   }
 
   .nav-links ul {
-    flex-direction: column;
     padding: 10px;
   }
 
@@ -8743,15 +8740,15 @@ section {
 
   .hamburger {
     display: block;
+    font-size: 28px;
+    cursor: pointer;
   }
 
-  /* Animación suave */
   @keyframes slideDown {
     from {opacity: 0; transform: translateY(-10px);}
     to {opacity: 1; transform: translateY(0);}
   }
 }
-
 
 
 
