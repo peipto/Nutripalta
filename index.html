@@ -299,11 +299,19 @@
   </div>
 </header>
 
-	  <script>
+	<script>
 function toggleMenu() {
   const nav = document.getElementById("navLinks");
-  nav.style.display = (nav.style.display === "block") ? "none" : "block";
+  nav.classList.toggle("active");
 }
+
+// Opcional: cerrar menú al hacer clic en un enlace
+const navLinks = document.querySelectorAll('.nav-links a');
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('navLinks').classList.remove('active');
+  });
+});
 </script>
 
 
@@ -331,3 +339,4 @@ function toggleMenu() {
 
 
 	
+
