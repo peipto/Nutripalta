@@ -51,6 +51,8 @@ table {
 	border-spacing: 0;
 }
 
+
+
 body {
 	-webkit-text-size-adjust: none;
 }
@@ -8707,6 +8709,51 @@ section {
 .gallery-vertical img:hover {
   transform: scale(1.03);
 }
+
+/* Ocultar hamburguesa en PC */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Ajustes en pantallas pequeñas */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: white;
+    width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    animation: slideDown 0.3s ease forwards;
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .nav-links ul li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  /* Animación suave */
+  @keyframes slideDown {
+    from {opacity: 0; transform: translateY(-10px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+}
+
+
+
 
 
 
